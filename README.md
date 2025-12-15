@@ -44,4 +44,4 @@ O loader foi implementado para fornecer feedback visual imediato ao usuário:
 
 Se você tiver dúvidas, sugestões ou quiser saber mais sobre a função Serverless de backend, entre em contato!
 
-[Seu Nome/Link]
+[Teo/traderbot.ao]
