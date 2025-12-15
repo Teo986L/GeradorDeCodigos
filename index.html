@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Códigos Expiráveis</title>
+    <link rel="stylesheet" href="generator_style.css"> 
+</head>
+<body>
+    
+    <div class="loader-container" id="splashLoader">
+        <div class="quadrado-animado"></div>
+        <div class="quadrado-animado"></div>
+        <div class="quadrado-animado"></div>
+        <div class="quadrado-animado"></div>
+        <div class="quadrado-animado"></div>
+    </div>
+    <div class="background">
+    </div>
+    
+    <div class="generator-container">
+        <div class="generator-box">
+            <h2>🔑 Gerador de Códigos</h2>
+            
+            <div class="input-group">
+                <label for="periodSelect">Selecione a Validade</label>
+                <select id="periodSelect">
+                    <option value="3">3 Dias</option>
+                    <option value="7">7 Dias</option>
+                </select>
+            </div>
+            
+            <button id="generateButton" class="generate-button">Gerar Novo Código</button>
+            
+            <div id="resultBox" class="result-box">
+                <p class="result-label">Código Gerado:</p>
+                <code id="generatedCode" class="code-output">---</code>
+                <p id="expiryInfo" class="expiry-info">Validade: ---</p>
+                <button class="copy-button" onclick="copyCode()">Copiar Código</button>
+            </div>
+
+            <p class="warning-note">
+                **Importante:** Mantenha a hora do sistema sincronizada para evitar erros de validação.
+            </p>
+        </div>
+        
+    </div>
+    
+    <script src="generator_script.js"></script>
+</body>
+</html>

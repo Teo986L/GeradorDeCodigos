@@ -1,0 +1,279 @@
+/* generator_style.css - Ajustes Finais: Compactação Máxima, Linha Contínua e Sem Rolagem Horizontal */
+
+/* Configurações básicas e reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1e1e2f; 
+    overflow-x: hidden; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+/* Efeito de Fundo */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('3e9992131eb8a846b4946f356f2583a8.jpg') center/cover; 
+    filter: blur(8px); 
+    z-index: -1;
+}
+
+/* Container Principal (Glassmorphism) */
+.generator-container {
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.7); 
+    background: rgba(30, 30, 50, 0.5); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    color: #f0f0f0; 
+    
+    max-width: 400px; 
+    width: 90%; 
+    
+    text-align: center;
+    margin: 20px; 
+}
+
+.generator-box {
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+.generator-box h2 {
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 2em;
+    color: #00CED1; 
+}
+
+/* Grupos de Input e Seleção */
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: #b0b0b0;
+}
+
+/* Estilos para o próprio seletor (Input Field) */
+#periodSelect {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05); 
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #f0f0f0; 
+    font-size: 1em;
+    box-sizing: border-box;
+    
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* background-image: url('3e9992131eb8a846b4946f356f2583a8.jpg'); */ 
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    
+    cursor: pointer;
+}
+
+/* Estilo da Lista de Opções (Dropdown Menu) */
+#periodSelect option {
+    background-color: #1e1e2f; 
+    color: #f0f0f0; 
+    padding: 8px 15px;
+}
+
+.generate-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7B68EE 0%, #00CED1 100%); 
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(123, 104, 238, 0.4);
+    transition: all 0.3s ease;
+}
+
+.generate-button:hover {
+    box-shadow: 0 6px 20px rgba(0, 206, 209, 0.5);
+    transform: translateY(-2px);
+}
+
+.result-box {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.result-label {
+    color: #b0b0b0;
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
+}
+
+/* AJUSTES CRUCIAIS: LINHA CONTÍNUA, COMPACTAÇÃO E SEM ROLAGEM HORIZONTAL */
+.code-output {
+    display: block;
+    font-size: 1.0em; 
+    line-height: 1.2; 
+    font-weight: bold;
+    color: #7B68EE; 
+    background: #1e1e2f;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    
+    /* REGRAS PRINCIPAIS PARA LINHA ÚNICA */
+    white-space: nowrap; 
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    
+    max-height: 50px; 
+    
+    text-align: left; 
+    user-select: all; 
+}
+
+.expiry-info {
+    font-size: 0.9em;
+    color: #FF6347; 
+    margin: 10px 0;
+}
+
+.copy-button {
+    background: #00CED1;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.copy-button:hover {
+    background: #00A9A9;
+}
+
+.warning-note {
+    font-size: 0.8em;
+    color: #b0b0b0;
+    margin-top: 25px;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+@media (max-width: 400px) {
+    .generator-container {
+        padding: 20px; 
+        width: 95%;
+        margin: 10px auto; 
+    }
+    
+    .generator-box h2 {
+        font-size: 1.8em; 
+    }
+
+    .code-output {
+        font-size: 0.9em; 
+        max-height: 40px; 
+    }
+}
+
+
+/* ------------------------------------- */
+/* 🟢 ESTILOS PARA SPLASH SCREEN E LOADER 🟢 */
+/* ------------------------------------- */
+
+/* 1. Container Principal (Ocupa toda a tela, com o fundo da imagem) */
+.loader-container {
+    /* Atenção: Estamos usando 'position: fixed' e 'z-index: 10000' 
+       para garantir que esta tela fique por cima de tudo no início.
+    */
+    display: flex; 
+    justify-content: center; /* Centraliza horizontalmente o loader */
+    align-items: center; /* Centraliza verticalmente o loader */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Usamos a mesma imagem de fundo, mas sem o 'filter: blur' */
+    background: url('3e9992131eb8a846b4946f356f2583a8.jpg') center/cover; 
+    
+    z-index: 10000; /* Alto valor para garantir prioridade visual */
+    
+    /* Transição para a remoção suave via JavaScript */
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Classe para ocultar o loader (usada pelo JavaScript) */
+.fade-out {
+    opacity: 0 !important;
+}
+
+/* 2. Estilo Básico do Quadrado Animado */
+.quadrado-animado {
+    width: 12px; /* Tamanho do quadrado */
+    height: 12px; 
+    background-color: #00CED1; /* Cor principal, combinando com o botão */
+    margin: 0 4px; /* Espaçamento entre os quadrados */
+    border-radius: 2px; /* Formato quadrado levemente arredondado */
+    
+    opacity: 0.2; /* Estado inicial: Vazio/Apagado */
+    
+    /* Aplicação da Animação (Nome, Duração, Curva, Repetição) */
+    animation: encher-quadrado 1.0s infinite ease-in-out;
+}
+
+/* 3. Atraso da Animação (Cria a Sequência de "Encher") */
+.quadrado-animado:nth-child(1) {
+    animation-delay: 0s;
+}
+.quadrado-animado:nth-child(2) {
+    animation-delay: 0.12s; 
+}
+.quadrado-animado:nth-child(3) {
+    animation-delay: 0.24s;
+}
+.quadrado-animado:nth-child(4) {
+    animation-delay: 0.36s;
+}
+.quadrado-animado:nth-child(5) {
+    animation-delay: 0.48s;
+}
+
+/* 4. Definição da Animação "Encher" (Keyframes) */
+@keyframes encher-quadrado {
+    0%, 100% {
+        opacity: 0.2; /* Vazio/Apagado */
+        background-color: #00CED1; 
+    }
+    50% {
+        opacity: 1.0; /* Cheio/Aceso */
+        /* Usando uma cor ligeiramente mais brilhante/secundária para o pico */
+        background-color: #7B68EE; 
+    }
+}
